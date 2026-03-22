@@ -1,0 +1,19 @@
+2026-03-23 01:36:19,532 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 01:36:19,543 - INFO - \u2705 AI Response: Sure, here's a basic 15-minute workout you can do at home:
+
+1. Warm-up (2 mins)
+   - Spot jogging: 1 min
+   - Jumping jacks: 1 min
+
+2. Bodyweight Exercises (10 mins)
+   - Push-ups: 2 sets of 10 reps. Rest for 30 seconds between sets.
+   - Squats: 2 sets of 10 reps. Rest for 30 seconds between sets.
+   - Lunges: 1 set of 10 reps per leg. Rest for 30 seconds.
+   - Plank: Hold for 1 min.
+
+3. Cool Down (3 mins)
+   - Light stretching focusing on your major muscle groups like your quads, hamstrings, chest, and back.
+
+Remember, the key to any workout is consistency! And always consult with a healthcare professional or personal trainer if you're new to exercising or have any health concerns.
+2026-03-23 01:48:35,607 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 01:48:35,625 - INFO - Workout plan generated successfully.
