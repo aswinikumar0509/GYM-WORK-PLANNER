@@ -17,3 +17,80 @@
 Remember, the key to any workout is consistency! And always consult with a healthcare professional or personal trainer if you're new to exercising or have any health concerns.
 2026-03-23 01:48:35,607 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-03-23 01:48:35,625 - INFO - Workout plan generated successfully.
+2026-03-23 01:56:16,369 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 01:56:16,381 - INFO - Diet image analyzed successfully.
+2026-03-23 01:59:23,958 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 01:59:23,971 - INFO - Diet plan generated successfully.
+2026-03-23 02:05:38,842 - ERROR - \u274c Error adding user: (sqlite3.OperationalError) no such table: users
+[SQL: INSERT INTO users (name, age, fitness_level, goal, equipment) VALUES (?, ?, ?, ?, ?)]
+[parameters: ('JohnDoe', 28, 'Beginner', 'Weight Loss', 'Bodyweight')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-23 02:05:38,846 - ERROR - \u274c Error fetching user: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.age AS users_age, users.fitness_level AS users_fitness_level, users.goal AS users_goal, users.equipment AS users_equipment 
+FROM users 
+WHERE users.name = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('JohnDoe', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-23 02:07:08,252 - ERROR - \u274c Error fetching user: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.age AS users_age, users.fitness_level AS users_fitness_level, users.goal AS users_goal, users.equipment AS users_equipment 
+FROM users 
+WHERE users.name = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('JohnDoe', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-23 02:07:08,254 - ERROR - \u274c Error adding user: (sqlite3.OperationalError) no such table: users
+[SQL: INSERT INTO users (name, age, fitness_level, goal, equipment) VALUES (?, ?, ?, ?, ?)]
+[parameters: ('JohnDoe', 28, 'Beginner', 'Weight Loss', 'Bodyweight')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-23 02:07:08,254 - ERROR - \u274c Error fetching user: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.age AS users_age, users.fitness_level AS users_fitness_level, users.goal AS users_goal, users.equipment AS users_equipment 
+FROM users 
+WHERE users.name = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('JohnDoe', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-23 02:09:31,586 - INFO - \u2705 Database initialized successfully!
+2026-03-23 02:09:31,596 - INFO - \u2705 Added user: JohnDoe
+2026-03-23 02:49:08,269 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 02:49:08,289 - INFO - Diet image analyzed successfully.
+2026-03-23 02:54:14,348 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 02:54:14,350 - INFO - Workout plan generated successfully.
+2026-03-23 02:54:41,281 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 02:54:41,284 - INFO - Diet plan generated successfully.
+2026-03-23 03:00:20,675 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 03:00:50,736 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 03:02:13,940 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 03:02:13,942 - INFO - Workout plan generated successfully.
+2026-03-23 03:04:42,826 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 03:04:42,827 - INFO - Diet plan generated successfully.
+2026-03-23 03:06:18,447 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 03:06:18,448 - INFO - Diet image analyzed successfully.
+2026-03-23 03:08:00,564 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 16:28:59,936 - INFO - \u2705 Added user: aswini
+2026-03-23 17:33:25,070 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 17:33:25,095 - INFO - Workout plan generated successfully.
+2026-03-23 17:33:25,103 - INFO - \u2705 Saved workout for user ID: 2
+2026-03-23 17:34:28,358 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 17:34:28,380 - INFO - Workout plan generated successfully.
+2026-03-23 17:34:28,386 - INFO - \u2705 Saved workout for user ID: 2
+2026-03-23 17:56:53,227 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-23 17:56:53,238 - INFO - Diet plan generated successfully.
+2026-03-23 17:56:53,244 - INFO - \u2705 Saved workout for user ID: 2
+2026-03-24 16:10:54,695 - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2026-03-24 16:11:39,512 - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2026-03-24 16:13:20,815 - ERROR - Food image API error: name 'tempfile' is not defined
+2026-03-24 16:19:11,654 - ERROR - Food image API error: name 'tempfile' is not defined
+2026-03-24 16:22:11,780 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 16:22:11,808 - INFO - Diet image analyzed successfully.
+2026-03-24 16:25:59,773 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 16:25:59,783 - INFO - Diet image analyzed successfully.
+2026-03-24 16:25:59,803 - INFO - \u2705 Saved workout for user ID: 2
