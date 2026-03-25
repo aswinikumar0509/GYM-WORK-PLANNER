@@ -1,10 +1,11 @@
 import os
+import uuid
 import tempfile
 import streamlit as st
 from dotenv import load_dotenv
 
 from workout_generator import generate_workout, generate_diet_plan, analyze_diet_image
-from chat_agent import create_conversation, chat_with_ai
+from chat_agent import get_conversation, chat_with_ai, clear_conversation
 
 load_dotenv()
 
@@ -167,6 +168,21 @@ footer {visibility: hidden;}
 header {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
+
+# ---------- SESSION SETUP ----------
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+
+if "chat_messages" not in st.session_state:
+    st.session_state.chat_messages = [
+        {
+            "role": "assistant",
+            "content": "Hey! I’m your AI fitness coach. Ask me anything about workouts, diet, calories, muscle gain, or weight loss."
+        }
+    ]
+
+# Initialize conversation memory in backend
+get_conversation(st.session_state.session_id)
 
 # ---------- HERO ----------
 st.markdown("""
@@ -350,17 +366,6 @@ with tab4:
     st.markdown('<div class="section-title">AI Fitness Coach</div>', unsafe_allow_html=True)
     st.caption("Ask about workouts, diet plans, calories, recovery, muscle gain, or fat loss.")
 
-    if "conversation" not in st.session_state:
-        st.session_state.conversation = create_conversation()
-
-    if "chat_messages" not in st.session_state:
-        st.session_state.chat_messages = [
-            {
-                "role": "assistant",
-                "content": "Hey! I’m your AI fitness coach. Ask me anything about workouts, diet, calories, muscle gain, or weight loss."
-            }
-        ]
-
     for message in st.session_state.chat_messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
@@ -378,7 +383,7 @@ with tab4:
 
         with st.chat_message("assistant"):
             with st.spinner("Thinking..."):
-                reply = chat_with_ai(st.session_state.conversation, prompt)
+                reply = chat_with_ai(st.session_state.session_id, prompt)
                 st.markdown(reply)
 
         st.session_state.chat_messages.append({
@@ -390,7 +395,9 @@ with tab4:
 
     with c1:
         if st.button("Clear Chat", key="clear_chat_btn"):
-            st.session_state.conversation = create_conversation()
+            clear_conversation(st.session_state.session_id)
+            st.session_state.session_id = str(uuid.uuid4())
+            get_conversation(st.session_state.session_id)
             st.session_state.chat_messages = [
                 {
                     "role": "assistant",
@@ -400,6 +407,4 @@ with tab4:
             st.rerun()
 
     with c2:
-        st.info("Try: 'Give me a high-protein vegetarian meal plan' or 'Suggest a 20-minute home workout for fat loss'.")
-
-    st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)

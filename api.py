@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, UploadFile, File
 from pydantic import BaseModel
 from database import get_user, add_user, save_workout
 from workout_generator import generate_workout,generate_diet_plan,analyze_diet_image
-from chat_agent import chat_with_ai
+from chat_agent import chat_with_ai,clear_conversation
 from logger import log_message
 import tempfile
 import sys
@@ -142,3 +142,39 @@ async def analyze_food_image_api(username: str, file: UploadFile = File(...)):
 
 
 #-------------------Chat_with_Coach-------------------------------
+
+class ChatRequest(BaseModel):
+    session_id:str
+    message:str
+
+class ChatResponse(BaseModel):
+    session_id:str
+    reply:str
+
+@app.post("/chat{username}",response_model=ChatResponse)
+def chat_endpoint(data:ChatRequest,username):
+    user = get_user(username)
+    if not user:
+        raise HTTPException(status_code=404,detail="User not found")
+    
+    try:
+        reply = chat_with_ai(data.session_id,data.message)
+        save_workout(user_id=user.id,workout_plan=reply)
+        return {
+            "session_id":data.session_id,
+            "reply":reply
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500,detail=str(e))
+    
+
+@app.delete("/chat/{session_id}")
+def clear_chat_endpoint(session_id:str):
+    try:
+        clear_conversation(session_id)
+        return {"message":f"Chat cleared for session {session_id}"}
+    except Exception as e:
+        raise HTTPException(status_code=500,detail=str(e))
+    
+    
+

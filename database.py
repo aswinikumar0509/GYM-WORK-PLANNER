@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from sqlalchemy import create_engine, Column, Integer, String, Text
+from sqlalchemy import create_engine, Column, Integer, String, Text,  Boolean
 from sqlalchemy.orm import declarative_base, sessionmaker
 from dotenv import load_dotenv
 from logger import log_message
@@ -23,11 +23,17 @@ class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-    age = Column(Integer)
-    fitness_level = Column(String)
-    goal = Column(String)
-    equipment = Column(String)
+    username = Column(String, unique=True, index=True, nullable=False)
+    email = Column(String, unique=True, index=True, nullable=False)
+    password_hash = Column(String, nullable=False)
+
+    age = Column(Integer, nullable=True)
+    fitness_level = Column(String, nullable=True)
+    goal = Column(String, nullable=True)
+    equipment = Column(String, nullable=True)
+
+    is_active = Column(Boolean, default=True)
+    is_admin = Column(Boolean, default=False)
 
 
 class WorkoutHistory(Base):
@@ -40,8 +46,8 @@ class WorkoutHistory(Base):
 
 def init_db():
     Base.metadata.create_all(bind=engine)
-    log_message("✅ Database initialized successfully!")
-    print("✅ Tables created and DB initialized.")
+    log_message(" Database initialized successfully!")
+    print("Tables created and DB initialized.")
 
 
 def add_user(name, age, fitness_level, goal, equipment):
@@ -57,11 +63,11 @@ def add_user(name, age, fitness_level, goal, equipment):
         session.add(user)
         session.commit()
         session.refresh(user)
-        log_message(f"✅ Added user: {name}")
+        log_message(f"Added user: {name}")
         return user
     except Exception as e:
         session.rollback()
-        log_message(f"❌ Error adding user: {str(e)}", "error")
+        log_message(f"Error adding user: {str(e)}", "error")
         return None
     finally:
         session.close()
@@ -73,7 +79,7 @@ def get_user(name):
         user = session.query(User).filter(User.name == name).first()
         return user
     except Exception as e:
-        log_message(f"❌ Error fetching user: {str(e)}", "error")
+        log_message(f"Error fetching user: {str(e)}", "error")
         return None
     finally:
         session.close()
@@ -85,10 +91,10 @@ def save_workout(user_id, workout_plan):
         history = WorkoutHistory(user_id=user_id, workout_plan=workout_plan)
         session.add(history)
         session.commit()
-        log_message(f"✅ Saved workout for user ID: {user_id}")
+        log_message(f"Saved workout for user ID: {user_id}")
     except Exception as e:
         session.rollback()
-        log_message(f"❌ Error saving workout: {str(e)}", "error")
+        log_message(f"Error saving workout: {str(e)}", "error")
     finally:
         session.close()
 

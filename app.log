@@ -94,3 +94,98 @@ pip install python-multipart
 2026-03-24 16:25:59,773 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-03-24 16:25:59,783 - INFO - Diet image analyzed successfully.
 2026-03-24 16:25:59,803 - INFO - \u2705 Saved workout for user ID: 2
+2026-03-24 21:19:18,040 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 21:19:18,055 - INFO -  AI Response: Sure! To help you plan a diet for weight loss, it would be great to know a few details first: your current weight, height, age, gender, activity level, any dietary preferences or restrictions, and your target weight or timeline. 
+
+In general, effective weight loss comes from creating a calorie deficit, which means consuming fewer calories than your body burns. A common approach is to reduce daily calorie intake by 500 to 750 calories, which typically leads to about 1 to 1.5 pounds of weight loss per week.
+
+Here’s a general outline for a balanced weight loss diet:
+
+**1. Macronutrients:**
+- **Protein:** Aim for about 25-30% of your daily calories from protein. Protein helps preserve muscle mass during weight loss and keeps you feeling full. Good sources include lean meats (chicken, turkey), fish, eggs, legumes, tofu, and low-fat dairy.
+- **Carbohydrates:** About 40-50% of your calories can come from carbs, preferably from complex carbs like whole grains (brown rice, quinoa, oats), vegetables, and fruits. These provide fiber and nutrients.
+- **Fats:** Around 20-30% of your calories should come from healthy fats, such as avocados, nuts, seeds, olive oil, and fatty fish like salmon.
+
+**2. Meal Timing and Frequency:**
+- Eat regular meals spaced throughout the day, such as 3 main meals and 1-2 healthy snacks. This can help manage hunger and energy levels.
+- Include protein and fiber at each meal to enhance satiety.
+
+**3. Hydration:**
+- Drink plenty of water, aiming for at least 8 cups (about 2 liters) daily. Sometimes thirst is mistaken for hunger.
+
+**4. Sample Day:**
+
+- **Breakfast:** Greek yogurt with berries and a tablespoon of chia seeds
+- **Snack:** A small handful of almonds and an apple
+- **Lunch:** Grilled chicken breast with quinoa and steamed broccoli
+- **Snack:** Carrot sticks with hummus
+- **Dinner:** Baked salmon with a side of roasted sweet potatoes and a mixed green salad with olive oil dressing
+
+**5. Additional Tips:**
+- Limit added sugars and refined carbs like white bread, pastries, and sugary drinks.
+- Avoid excessive processed foods high in salt and unhealthy fats.
+- Combine your diet with regular physical activity, such as walking, cycling, or strength training.
+- Track your food intake using apps or a journal to stay mindful.
+
+If you provide your specific details, I can tailor a more precise plan for you!
+2026-03-24 23:23:54,218 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 23:23:54,232 - INFO - Workout plan generated successfully.
+2026-03-24 23:25:15,078 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 23:25:15,081 - INFO - Workout plan generated successfully.
+2026-03-24 23:25:49,782 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 23:25:49,784 - INFO - Diet plan generated successfully.
+2026-03-24 23:26:20,201 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 23:26:20,205 - INFO - Diet image analyzed successfully.
+2026-03-24 23:26:52,259 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 23:26:52,267 - INFO -  AI Response: Sure! I can help with both. Here's a high-protein vegetarian meal plan for a day, followed by a 20-minute home workout designed for fat loss.
+
+**High-Protein Vegetarian Meal Plan:**
+
+**Breakfast:**  
+- Greek yogurt (1 cup) with mixed berries and a tablespoon of chia seeds (about 20g protein)  
+- A slice of whole-grain toast with almond butter (about 6g protein)
+
+**Mid-Morning Snack:**  
+- A handful of roasted chickpeas or a protein smoothie with spinach, banana, and pea protein powder (around 15-20g protein)
+
+**Lunch:**  
+- Quinoa salad with black beans, corn, cherry tomatoes, avocado, and a lemon-tahini dressing (approx. 25g protein)  
+- Side of steamed broccoli
+
+**Afternoon Snack:**  
+- Cottage cheese (1/2 cup) with sliced cucumber and cherry tomatoes (about 14g protein)
+
+**Dinner:**  
+- Lentil and vegetable curry served with brown rice (approximately 25-30g protein)  
+- Mixed green salad with a sprinkle of sunflower seeds
+
+**Evening Snack (optional):**  
+- A boiled egg or a small serving of edamame (around 6-10g protein)
+
+---
+
+**20-Minute Home Workout for Fat Loss:**
+
+This workout combines cardio and strength moves to maximize calorie burn.
+
+**Warm-up (3 minutes):**  
+- Jog in place or do jumping jacks for 1 minute  
+- Arm circles and leg swings for 2 minutes
+
+**Workout (4 rounds of the following circuit, 4 minutes total per round):**  
+- 30 seconds high knees  
+- 30 seconds bodyweight squats  
+- 30 seconds mountain climbers  
+- 30 seconds push-ups (modify on knees if needed)  
+- 30 seconds jumping lunges (or regular lunges if jumping is too intense)  
+- 30 seconds plank hold  
+- 30 seconds rest
+
+**Cool-down (2 minutes):**  
+- Stretch hamstrings, quads, shoulders, and back gently
+
+This combination should help you build muscle and burn fat efficiently. Let me know if you want me to customize either the meal plan or workout based on your preferences or any dietary restrictions!
+2026-03-24 23:36:18,417 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 23:36:18,422 - INFO - Diet plan generated successfully.
+2026-03-24 23:37:10,925 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 23:37:10,927 - INFO - Workout plan generated successfully.
