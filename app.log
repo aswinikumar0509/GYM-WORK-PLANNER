@@ -270,3 +270,63 @@ WHERE users.name = %(name_1)s
  LIMIT %(param_1)s]
 [parameters: {'name_1': 'aswini', 'param_1': 1}]
 (Background on this error at: https://sqlalche.me/e/20/f405)
+2026-03-26 16:03:31,898 - INFO - Database initialized successfully!
+2026-03-26 16:03:42,979 - INFO - Added user: aswini
+2026-03-26 16:04:07,343 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-26 16:04:07,357 - INFO - Workout plan generated successfully.
+2026-03-26 16:04:07,373 - INFO - Saved workout for user ID: 1
+2026-03-27 00:20:21,792 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-27 00:20:21,808 - INFO - Workout plan generated successfully.
+2026-03-27 01:27:34,924 - INFO - Database initialized successfully!
+2026-03-27 01:27:45,913 - INFO - Database initialized successfully!
+2026-03-27 01:37:50,617 - INFO - Database initialized successfully!
+2026-03-27 01:38:12,866 - INFO - Database initialized successfully!
+2026-03-27 01:40:46,070 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-27 01:40:46,096 - INFO - Workout plan generated successfully.
+2026-03-27 01:40:46,103 - INFO - Saved workout for user ID: 2
+2026-03-27 01:44:33,578 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-27 01:44:33,579 - INFO - Workout plan generated successfully.
+2026-03-27 01:44:33,595 - INFO - Saved workout for user ID: 2
+2026-03-27 01:44:36,664 - INFO - Database initialized successfully!
+2026-03-27 01:45:10,974 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-27 01:45:10,989 - INFO - Workout plan generated successfully.
+2026-03-27 01:45:11,006 - INFO - Saved workout for user ID: 2
+2026-03-27 01:47:25,168 - INFO - Database initialized successfully!
+2026-03-27 01:48:59,578 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-27 01:48:59,589 - INFO - Diet plan generated successfully.
+2026-03-27 01:48:59,606 - INFO - Saved workout for user ID: 2
+2026-03-27 01:50:51,416 - INFO - Database initialized successfully!
+2026-03-27 01:51:21,975 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-27 01:51:21,986 - INFO - Diet image analyzed successfully.
+2026-03-27 01:51:22,003 - INFO - Saved workout for user ID: 2
+2026-03-27 01:51:49,579 - INFO - Database initialized successfully!
+2026-03-27 01:52:13,227 - INFO - Database initialized successfully!
+2026-03-27 01:52:59,563 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-27 01:52:59,573 - INFO -  AI Response: Absolutely! Strength training is a fantastic way to build muscle, increase endurance, and improve overall health. To get started, it’s important to understand a few key principles:
+
+1. **Types of Strength Training**:  
+   - **Bodyweight exercises** like push-ups, pull-ups, squats, and planks are great for beginners and can be done anywhere.  
+   - **Free weights** such as dumbbells and barbells allow for a wide range of movements and help build functional strength.  
+   - **Machines** provide controlled motion and are often good for isolating specific muscles, especially if you’re new to lifting.
+
+2. **Basic Structure of a Routine**:  
+   - **Warm-up**: 5-10 minutes of light cardio and dynamic stretches to prepare your muscles.  
+   - **Main workout**: Focus on compound movements (exercises that work multiple muscle groups) such as squats, deadlifts, bench presses, and rows. These exercises build more strength efficiently.  
+   - **Sets and reps**: For strength, typically aim for 3-5 sets of 3-8 reps with heavier weights. For muscle endurance, more reps with lighter weights (e.g., 12-15 reps) are common.  
+   - **Rest**: Rest 1-3 minutes between sets for strength gains.
+
+3. **Frequency**:  
+   - Work each muscle group 2-3 times per week, allowing at least 48 hours of rest between sessions targeting the same muscles to recover and grow.
+
+4. **Progressive Overload**:  
+   - Gradually increase the weight, reps, or number of sets over time to keep challenging your muscles.
+
+5. **Recovery and Nutrition**:  
+   - Adequate protein intake (about 1.6-2.2 grams per kilogram of body weight) supports muscle repair.  
+   - Sleep and rest days are crucial to allow your muscles to heal and strengthen.
+
+If you want, I can help you design a beginner or intermediate workout plan tailored to your goals, whether it’s building muscle, gaining strength, or improving overall fitness. Do you have any specific goals or equipment available?
+2026-03-27 01:52:59,592 - INFO - Saved workout for user ID: 2
+2026-03-27 02:00:47,292 - INFO - Database initialized successfully!
+2026-03-27 02:01:20,053 - INFO - Database initialized successfully!
+2026-03-27 02:04:12,393 - INFO - Database initialized successfully!

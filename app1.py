@@ -181,8 +181,32 @@ if "chat_messages" not in st.session_state:
         }
     ]
 
+if "captured_image_bytes" not in st.session_state:
+    st.session_state.captured_image_bytes = None
+
+if "captured_image_name" not in st.session_state:
+    st.session_state.captured_image_name = None
+
 # Initialize conversation memory in backend
 get_conversation(st.session_state.session_id)
+
+# ---------- HELPERS ----------
+def get_file_suffix(file_name: str | None) -> str:
+    if not file_name:
+        return ".jpg"
+
+    ext = os.path.splitext(file_name)[1].lower()
+    if ext in [".jpg", ".jpeg", ".png"]:
+        return ext
+
+    return ".jpg"
+
+
+def save_bytes_to_temp_file(file_bytes: bytes, suffix: str = ".jpg") -> str:
+    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp_file:
+        tmp_file.write(file_bytes)
+        return tmp_file.name
+
 
 # ---------- HERO ----------
 st.markdown("""
@@ -319,44 +343,70 @@ with tab3:
         horizontal=True
     )
 
-    image_file = None
+    image_bytes = None
+    image_name = None
 
     if option == "Upload Image":
         uploaded_file = st.file_uploader(
             "Upload a food image",
             type=["jpg", "jpeg", "png"]
         )
-        if uploaded_file:
-            image_file = uploaded_file
-            st.image(image_file, caption="Uploaded Image", use_container_width=True)
+
+        if uploaded_file is not None:
+            image_bytes = uploaded_file.getvalue()
+            image_name = uploaded_file.name
+            st.image(image_bytes, caption="Uploaded Image", use_container_width=True)
 
     elif option == "Use Camera":
-        camera_photo = st.camera_input("Take a picture")
-        if camera_photo:
-            image_file = camera_photo
-            st.image(image_file, caption="Captured Image", use_container_width=True)
+        st.caption("If camera is not opening, allow browser camera permission and run the app on localhost or HTTPS.")
 
-    if image_file and st.button("Analyze Food Image", key="image_btn"):
-        with st.spinner("Analyzing your meal..."):
-            try:
-                suffix = ".jpg"
-                with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp_file:
-                    tmp_file.write(image_file.read())
-                    temp_path = tmp_file.name
+        camera_photo = st.camera_input("Take a picture")
+
+        if camera_photo is not None:
+            st.session_state.captured_image_bytes = camera_photo.getvalue()
+            st.session_state.captured_image_name = camera_photo.name or "camera_photo.jpg"
+
+        if st.session_state.captured_image_bytes is not None:
+            image_bytes = st.session_state.captured_image_bytes
+            image_name = st.session_state.captured_image_name
+            st.image(image_bytes, caption="Captured Image", use_container_width=True)
+        else:
+            st.warning("No camera image captured yet.")
+
+    if image_bytes is not None and st.button("Analyze Food Image", key="image_btn"):
+        temp_path = None
+        try:
+            with st.spinner("Analyzing your meal..."):
+                suffix = get_file_suffix(image_name)
+                temp_path = save_bytes_to_temp_file(image_bytes, suffix=suffix)
 
                 result = analyze_diet_image(temp_path)
 
-                if os.path.exists(temp_path):
-                    os.remove(temp_path)
+            st.success("Image analyzed successfully.")
+            st.markdown('<div class="card">', unsafe_allow_html=True)
+            st.subheader("Food Intake Details")
+            st.write(result)
+            st.markdown('</div>', unsafe_allow_html=True)
 
-                st.success("Image analyzed successfully.")
-                st.markdown('<div class="card">', unsafe_allow_html=True)
-                st.subheader("Food Intake Details")
-                st.write(result)
-                st.markdown('</div>', unsafe_allow_html=True)
+        except Exception as e:
+            st.error(f"Error while analyzing image: {e}")
 
-            except Exception as e:
-                st.error(f"Error: {e}")
+        finally:
+            if temp_path and os.path.exists(temp_path):
+                os.remove(temp_path)
+
+    elif st.button("Analyze Food Image", key="image_btn_empty"):
+        st.warning("Please upload or capture an image first.")
+
+    c1, c2 = st.columns(2)
+    with c1:
+        if st.button("Clear Captured Image", key="clear_image_btn"):
+            st.session_state.captured_image_bytes = None
+            st.session_state.captured_image_name = None
+            st.rerun()
+
+    with c2:
+        st.empty()
 
     st.markdown('</div>', unsafe_allow_html=True)
 
