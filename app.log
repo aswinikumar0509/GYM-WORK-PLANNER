@@ -189,3 +189,84 @@ This combination should help you build muscle and burn fat efficiently. Let me k
 2026-03-24 23:36:18,422 - INFO - Diet plan generated successfully.
 2026-03-24 23:37:10,925 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-03-24 23:37:10,927 - INFO - Workout plan generated successfully.
+2026-03-25 13:03:37,418 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-25 13:03:37,443 - INFO - Workout plan generated successfully.
+2026-03-25 13:04:19,062 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-25 13:04:19,065 - INFO - Diet plan generated successfully.
+2026-03-25 13:04:43,888 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-25 13:04:43,892 - INFO - Diet image analyzed successfully.
+2026-03-26 12:57:27,329 - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\aswin\anaconda3\envs\work\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-03-26 12:59:14,018 - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\aswin\anaconda3\envs\work\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-03-26 13:00:45,604 - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\aswin\anaconda3\envs\work\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-03-26 13:12:18,095 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 13:13:11,687 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 13:14:09,532 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 13:15:49,132 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 13:18:07,236 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 13:18:48,790 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 13:18:48,791 - ERROR - Error adding user: 'name' is an invalid keyword argument for User
+2026-03-26 13:18:59,494 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 13:19:22,165 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 13:19:23,454 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 15:21:29,270 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 15:22:42,232 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 15:22:42,232 - ERROR - Error adding user: 'name' is an invalid keyword argument for User
+2026-03-26 15:22:58,664 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 15:23:42,436 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 15:23:59,755 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 15:24:09,398 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 15:24:54,250 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 15:24:54,250 - ERROR - Error adding user: 'name' is an invalid keyword argument for User
+2026-03-26 15:25:13,988 - ERROR - Error fetching user: type object 'User' has no attribute 'name'
+2026-03-26 15:28:29,638 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-26 15:28:29,643 - INFO - Workout plan generated successfully.
+2026-03-26 15:45:45,627 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-26 15:45:45,650 - INFO - Workout plan generated successfully.
+2026-03-26 15:45:45,658 - INFO - \u2705 Saved workout for user ID: 2
+2026-03-26 15:54:37,740 - ERROR - \u274c Error fetching user: (pymysql.err.OperationalError) (1049, "Unknown database 'fitness_db'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-26 15:54:37,742 - ERROR - \u274c Error adding user: (pymysql.err.OperationalError) (1049, "Unknown database 'fitness_db'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-26 15:54:50,560 - ERROR - \u274c Error fetching user: (pymysql.err.OperationalError) (1049, "Unknown database 'fitness_db'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-03-26 15:57:01,103 - ERROR - \u274c Error fetching user: (pymysql.err.ProgrammingError) (1146, "Table 'fitness_db.users' doesn't exist")
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.age AS users_age, users.fitness_level AS users_fitness_level, users.goal AS users_goal, users.equipment AS users_equipment 
+FROM users 
+WHERE users.name = %(name_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'name_1': 'aswini', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-03-26 15:57:01,107 - ERROR - \u274c Error adding user: (pymysql.err.ProgrammingError) (1146, "Table 'fitness_db.users' doesn't exist")
+[SQL: INSERT INTO users (name, age, fitness_level, goal, equipment) VALUES (%(name)s, %(age)s, %(fitness_level)s, %(goal)s, %(equipment)s)]
+[parameters: {'name': 'aswini', 'age': 25, 'fitness_level': 'moderate', 'goal': 'weight loss', 'equipment': 'body weight'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-03-26 15:59:40,559 - ERROR - Error fetching user: (pymysql.err.ProgrammingError) (1146, "Table 'fitness_db.users' doesn't exist")
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.age AS users_age, users.fitness_level AS users_fitness_level, users.goal AS users_goal, users.equipment AS users_equipment 
+FROM users 
+WHERE users.name = %(name_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'name_1': 'aswini', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-03-26 15:59:40,563 - ERROR - Error adding user: (pymysql.err.ProgrammingError) (1146, "Table 'fitness_db.users' doesn't exist")
+[SQL: INSERT INTO users (name, age, fitness_level, goal, equipment) VALUES (%(name)s, %(age)s, %(fitness_level)s, %(goal)s, %(equipment)s)]
+[parameters: {'name': 'aswini', 'age': 25, 'fitness_level': 'moderate', 'goal': 'weight loss', 'equipment': 'body weight'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-03-26 15:59:52,493 - ERROR - Error fetching user: (pymysql.err.ProgrammingError) (1146, "Table 'fitness_db.users' doesn't exist")
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.age AS users_age, users.fitness_level AS users_fitness_level, users.goal AS users_goal, users.equipment AS users_equipment 
+FROM users 
+WHERE users.name = %(name_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'name_1': 'aswini', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)

@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from pydantic import BaseModel
-from database import get_user, add_user, save_workout
+from database import get_user, add_user, save_workout,init_db
 from workout_generator import generate_workout,generate_diet_plan,analyze_diet_image
 from chat_agent import chat_with_ai,clear_conversation
 from logger import log_message
@@ -9,6 +9,10 @@ import sys
 import os
 
 app = FastAPI()
+
+@app.on_event("startup")
+def startup():
+    init_db()
 
 class UserRequest(BaseModel):
     name:str
@@ -177,4 +181,3 @@ def clear_chat_endpoint(session_id:str):
         raise HTTPException(status_code=500,detail=str(e))
     
     
-
